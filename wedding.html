@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>دعوة زفاف</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #fef6f9 url('back.png') no-repeat center center / cover;
+      font-family: 'Cairo', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    img.heart-img {
+    width: 180px;
+}
+.heart-label {
+  position: absolute;
+  top: 47%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50% 50% 0 0;
+  z-index: 3;
+  font-family: 'Cairo', sans-serif;
+ 
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+img.icon-wed {
+    width: 54px;
+}
+
+
+.heart-label::before,
+.heart-label::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 70px;
+
+  border-radius: 50%;
+  top: 0;
+}
+
+.heart-label::before {
+  left: -40px;
+}
+
+.heart-label::after {
+  left: 40px;
+}
+
+.envelope.open .heart-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.heart-label::before,
+.heart-label::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 70px;
+  
+  border-radius: 50%;
+  top: 0;
+}
+
+.heart-label::before {
+  left: -40px;
+}
+
+.heart-label::after {
+  left: 40px;
+}
+
+    .envelope {
+      width: 85%;
+    /* max-width: 634px; */
+    height: 81vh;
+    aspect-ratio: 3 / 4;
+    position: relative;
+    background: #ffffff26;
+    border: 4px solid #e0aeb566;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    }
+    .img_wed {
+    margin-top: 38px;
+    width: 464px;
+}
+.desc_wed {
+    font-size: 35px;
+    text-align: -webkit-center;
+    color: #ac8294;
+    padding: 0px 46px;
+}
+
+.wed_p {
+    padding-bottom: 36px;
+    font-size: 40px;
+    color: #a2667f;
+}
+p.info-wed {
+    padding: 0 24px;
+}
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: #e0aeb5;
+      transform-origin: top center;
+      transition: transform 1.5s ease;
+      z-index: 2;
+    }
+    .info-grid div {
+    flex: 1;
+    border-left: 1px solid #e0aeb5;
+    min-width: 100px;
+}
+    .card {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+     
+      padding: 30px;
+      box-sizing: border-box;
+      text-align: center;
+      color: #4e3e42;
+      font-size: 20px;
+      line-height: 2;
+      border-top: 2px dashed #e0aeb5;
+      z-index: 1;
+      transition: top 1.5s ease;
+    }
+
+    .open .flap {
+      transform: rotateX(-120deg);
+    }
+
+    .open .card {
+      top: 0;
+    }
+
+    .names {
+    font-size: 14rem;
+    font-family: Aldhabi;
+    color: #757458;
+    margin: -73px 0;
+}
+
+    .section {
+      margin: 20px 0;
+    }
+
+   
+
+    .info-grid {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px auto;
+      font-size: 22px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .info-grid div {
+      flex: 1;
+      min-width: 100px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #a94f63;
+    }
+
+    .decor {
+    width: 475px;
+   
+    margin-top: 73px;
+   
+}
+
+    @media (max-width: 500px) {
+      .card {
+        font-size: 16px;
+      }
+
+      .names {
+    font-size: 14rem;
+    font-family: Aldhabi;
+    color: #757458;
+    margin: -73px 0;
+}
+    }
+  </style>
+</head>
+<body>
+
+<!-- موسيقى خلفية -->
+<audio id="weddingMusic" src="audio.mp3" preload="auto"></audio>
+
+<!-- الظرف -->
+<div class="envelope" onclick="toggleEnvelope()">
+  <div class="flap"></div>
+  <div class="heart-label"><img class="heart-img" src="open.png"></div>
+
+  <div class="card">
+    <div class="section">
+    <img src="layer.png" alt="Wedding Invitation" class="img_wed">
+      <p class="desc_wed">جائنا من نرتضي دينه وخلقه فرضينا.بسرّنا ويسعدنا دعوتكم لحضور حفل زفاف</p>
+    </div>
+
+    <div class="names">نوري <span class="and-wed">&</span> زينة</div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="wed_p">وذلك بمشيئة الله تعالى:</p>
+      <div class="info-grid">
+        <div>
+          <img class="icon-wed" src="heart.png"><p class="info-wed">من 7:00 إلى 10:00 مساءً</p>
+        </div>
+        <div>
+          <img class="icon-wed" src="location.png"><br><p class="info-wed">طرابلس - برصا</p>
+        </div>
+        <div>
+          <img class="icon-wed"src="married.png"><br><p class="info-wed">الأحد 13 / 05 / <p>2025</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    
+
+    <img src="footer web.png" class="decor">
+  </div>
+</div>
+
+<script>
+  function toggleEnvelope() {
+    const envelope = document.querySelector('.envelope');
+    const music = document.getElementById('weddingMusic');
+
+    envelope.classList.toggle('open');
+
+    if (envelope.classList.contains('open')) {
+      music.play();
+    } else {
+      music.pause();
+      music.currentTime = 0;
+    }
+  }
+</script>
+
+</body>
+</html>
